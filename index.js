@@ -6,21 +6,44 @@
 // 	//console.log(name);
 // 	alert("Your name is: " + name);
 // }
-var nameShowing = false
-function toggleName() {
-	if(!nameShowing){
-		var name = prompt("What is your name?");
-		var mainUnorderedList = document.querySelector('ul');
-		var nameListItem = document.createElement('li');
-		nameListItem.textContent = name;
-		nameListItem.id = "nameListItem";
-		mainUnorderedList.append(nameListItem);
-		nameShowing = !nameShowing;
-	}else{
-		var mainUnorderedList = document.querySelector('ul');
-		var nameListItem = document.getElementById("nameListItem");
-		mainUnorderedList.remove(nameListItem);
-		nameShowing = !nameShowing;
-	}
+// var nameShowing = false
+// function toggleName() {
+// 	if(!nameShowing){
+// 		var name = prompt("What is your name?");
+// 		var mainUnorderedList = document.querySelector('ul');
+// 		var nameListItem = document.createElement('li');
+// 		nameListItem.textContent = name;
+// 		nameListItem.id = "nameListItem";
+// 		mainUnorderedList.append(nameListItem);
+// 		nameShowing = !nameShowing;
+// 	}else{
+// 		var mainUnorderedList = document.querySelector('ul');
+// 		var nameListItem = document.getElementById("nameListItem");
+// 		mainUnorderedList.remove(nameListItem);
+// 		nameShowing = !nameShowing;
+// 	}
 	
+// }
+
+const namesArr = ["Christian", "Thomas", "Петер", "Will"]
+
+function AddElements(){
+	var mainUnorderedList = document.querySelector('ul');
+	
+	// namesArr.forEach((name) => {
+	// 	var nameListItem = document.createElement('li');
+	// 	nameListItem.textContent = name;
+	// 	nameListItem.id = "nameListItem";
+	// 	mainUnorderedList.append(nameListItem);
+	// });
+	fetch("https://reqres.in/api/users")
+		.then((res) => res.json())
+		.then((json) => {
+			json.data.forEach((userObject) => {
+				var nameListItem = document.createElement('li');
+				nameListItem.textContent = userObject.first_name;
+				nameListItem.id = "nameListItem";
+				mainUnorderedList.append(nameListItem);
+			})
+		});
 }
