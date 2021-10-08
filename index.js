@@ -25,6 +25,9 @@
 	
 // }
 
+// const myForm = document.getElementById("myForm");
+// myForm.onsubmit = addUser;
+
 const namesArr = ["Christian", "Thomas", "Петер", "Will"]
 
 function AddElements(){
@@ -46,4 +49,15 @@ function AddElements(){
 				mainUnorderedList.append(nameListItem);
 			})
 		});
+}
+
+function addUser() {
+	event.preventDefault();
+	const fnameField = document.getElementById("fname");
+	const lnameField = document.getElementById("lname");
+	var mainUnorderedList = document.querySelector('ul');
+	var nameListItem = document.createElement('li');
+	nameListItem.textContent = fnameField.value + " " + lnameField.value;
+	nameListItem.id = "nameListItem";
+	mainUnorderedList.append(nameListItem);
 }

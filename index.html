@@ -5,7 +5,7 @@
 		<meta name="description" content="My super duper fancy website"/>
 		<meta name="keywords" content="Fancy, Super Duper, First Site"/>
 		<meta name="robots" content="index, follow"/>
-		<title>Hello World!</title>
+		<title>UAM</title>
 		<base href="http://localhost:5500/index.html" />
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 		<link rel="stylesheet" href="styles.css">
@@ -13,23 +13,41 @@
 		<script src="index.js"></script>
 	</head>
 	<body>
-		<header><h1>My First Site!</h1></header>
-		<div>
-			<ol class="sidelineme">
-				<li>Nothing</li>
-				<li>Absolutely</li>
-			</ol>
-		</div>
+		<header><h1>User Account Manager</h1></header>
+		
 		<main>
-			<p class="boldme italisizeme">Things that are great about my site!</p>
+			<section id="body">
+				<p class="boldme italisizeme">List of users on our site!</p>
 			<ul>
-				<li>Absolutely</li>
-				<li>Nothing</li>
+				<li>Christian Bingman</li>
 			</ul>
-			<button type="button" class="btn btn-success" id="mainButton" onclick="AddElements()">Our fancy site button</button>
-			<p class="italisizeme">Now I felt it best to rank them for some reason</p>
+			<section>
+				<hr>
+				<h2>Add a New User!</h2>
+				<form onsubmit="addUser()" id="myForm">
+					<label for="fname">First Name:</label>
+					<input type="text" id="fname">
+					<label for="lname">Last Name:</label>
+					<input type="text" id="lname">
+					<input class="btn btn-primary" type="submit" value="Submit User">
+				</form>
+			</section>
+			</section>
+			<div class="sidelineme">
+				<ol>
+					<li>Some</li>
+					<li>Links</li>
+					<li>to</li>
+					<li>Different</li>
+					<li>Parts</li>
+					<li>of</li>
+					<li>the</li>
+					<li>Site</li>
+				</ol>
+			</div>
 			
 		</main>
-		<footer>A <a href="https://www.google.com">Link to Google</a></footer>
+		
+		<footer><hr>A <a href="https://www.google.com">Link to Google</a></footer>
 	</body>
 </html>

@@ -11,10 +11,29 @@ h1 {
 	font-style: italic;
 }
 
-li {
-	
+main {
+	display: flex;
+	flex-direction: row;
+}
+
+.body {
+	flex-grow: 2;
 }
 
 .sidelineme {
-	float: right;
+	flex-grow: 1;
+}
+
+input {
+	display: block;
+	margin: 5px;
+}
+
+footer {
+	padding-top: 50px;
+}
+@media screen and (max-width: 576px){
+	main {
+		display: block;
+	}
 }
